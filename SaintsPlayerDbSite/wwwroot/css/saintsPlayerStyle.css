@@ -1,0 +1,169 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* nav bar */
+
+#navbar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: white;
+    color: black;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 0rem;
+    border-bottom: 2px solid black;
+}
+
+    #navbar ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+        #navbar ul li a {
+            color: black;
+            padding: 0.75rem;
+            margin: 0 0.25rem;
+        }
+
+            #navbar ul li a:hover {
+                color: red;
+            }
+h1{
+    padding-left: 20px;
+}
+.logo-img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+    height: 80px;
+    background: url('/img/saintsLogo.png') no-repeat;
+    background-size: contain;
+    min-height: 100%;
+    margin-right: 10px;
+}
+
+.title{
+    font-size: 38px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    
+
+.text-red {
+    color: red;
+}
+
+/* main area */
+
+.section {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 5%;
+    background: red;
+    padding: 3rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.main {
+    width: 90%;
+    background: white;
+}
+
+/* search bar */
+
+.form-group {
+    display: flex;
+    padding-left: 10%;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+.form-control {
+    margin-right: 10px; /* Add right margin to separate input and button */
+}
+
+/* table */
+
+.table-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.table th, .table td {
+    width: auto;
+    text-align: center;
+}
+
+.table {
+    max-width: 100%;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.tablehead {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+    .tablehead:hover {
+        background-color: rgb(211, 3, 3);
+    }
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: gray;
+    border: 3px solid;
+}
+
+/* footer */
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+/* temp */
+
+.constructionWarning {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 150px;
+    height: 90vh;
+    font-size: large;
+}

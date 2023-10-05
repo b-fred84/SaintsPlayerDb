@@ -1,0 +1,83 @@
+﻿@page "/player"
+@inject NavigationManager NavigationManager
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatable" content="ie=edge">
+    <link rel="stylesheet" href="css/saintsPlayerStyle.css">
+    <title>Saints player database</title>
+</head>
+<body>
+    <nav id="navbar">
+       
+        <h1 class="title"><span class="logo-img"></span><span class="text-red">Saints</span> Player Database</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Players</a></li>
+            <li><a href="/manager">Managers</a></li>
+
+        </ul>
+    </nav>
+    <section class="section">
+        <div class="sidebar"></div>
+        <div class="main">
+            <div class="search-bar">
+                <div class="form-group">
+                    <input type="text" class="form-control" @bind="_searchString" placeholder="Search players...">
+                    <button class="btn btn-primary" @onclick="Search">Search</button>
+                </div>
+            </div>
+           
+            <div class="table-container">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+
+                            <th><button class="tablehead" @onclick='() => SortByColumn("FirstName")'>First Name</button></th>
+                            <th><button class="tablehead" @onclick='() => SortByColumn("LastName")'>Last Name</button></th>
+                            <th><button class="tablehead" @onclick='() => SortByColumn("Position")'>Position</button></th>
+                            <th><button class="tablehead" @onclick='() => SortByColumn("Appearances")'>Appearances</button></th>
+                            <th><button class="tablehead" @onclick='() => SortByColumn("Goals")'>Goals</button></th>
+                            <th><button class="tablehead" @onclick='() => SortByColumn("YearsAtClub")'>Years Playing</button></th>
+                            <th><button class="tablehead" @onclick='() => SortByColumn("Nationality")'>Nationality</button></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var player in Items)
+                        {
+                            <tr>
+
+                                <td>@player.FirstName</td>
+                                <td>@player.LastName</td>
+                                <td>@player.Position</td>
+                                <td>@player.Appearances</td>
+                                <td>@player.Goals</td>
+                                <td>@player.YearsAtClub</td>
+                                <td>@player.Nationality</td>
+
+                            </tr>
+                        }
+                    </tbody>
+                    <div class="pagination">
+                        <button class="btn btn-primary" @onclick="LoadPreviousPlayers" disabled="@(_offset == 0)">Previous</button>
+                        <button class="btn btn-primary" @onclick="LoadNextPlayers" disabled="@(_offset + _limit >= _totalCount)">Next</button>
+                    </div>
+                </table>
+            </div>
+
+        </div>
+        <div class="sidebar"></div>
+    </section>
+
+</body>
+
+
+
+
+
+
+
+
